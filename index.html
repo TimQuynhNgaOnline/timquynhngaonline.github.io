@@ -91,10 +91,16 @@
         <h2>Đăng ký tình nguyện viên</h2>
         <p>Chân thành cảm ơn sự quan tâm của các bạn. Cho dù bạn chỉ dành ra 10 phút và chỉ gửi một tin nhắn, đó vẫn là một niềm động viên rất lớn đối với gia đình.</p>
       </div>
-      <div class="signup-actions">
-        <a class="sheet-button" href="#khu-vuc">Chọn khu vực hỗ trợ</a>
-        <a class="text-link" href="https://docs.google.com/spreadsheets/d/1y5IT9wJrsxHUxSeygnta8Y9Z0lQcKngUpPZOKxu6hG8/edit" target="_blank" rel="noopener">Mở bảng công việc</a>
-      </div>
+      <form class="signup-form" id="volunteerForm" novalidate>
+        <label for="volunteerEmail">Email của bạn</label>
+        <div class="signup-row">
+          <input id="volunteerEmail" name="email" type="email" autocomplete="email" placeholder="ten@example.com" required>
+          <button type="submit">Đăng ký</button>
+        </div>
+        <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <p class="form-note">Email chỉ được dùng để ban quản trị liên hệ và mời bạn vào bảng công việc.</p>
+        <p class="form-status" id="volunteerStatus" role="status" aria-live="polite"></p>
+      </form>
     </section>
 
     <section class="portrait-section" id="nhan-dien">
@@ -113,20 +119,24 @@
       <h2>Mẫu tin nhắn</h2>
       <div class="message-stack compact-messages">
         <article class="message-card">
+          <div class="message-head"><h3>Tiếng Anh</h3><button type="button" class="copy-button" data-target="msg-en">Sao chép</button></div>
+          <div class="message-box" id="msg-en">Hello. Our family has been searching for Nguyen Quynh Nga for more than 30 years, since she went missing in the Sochi area in 1993. We recently received information suggesting that she may be living in this region. We are attaching her childhood photograph and an AI-generated image showing how she may look today. If possible, please share this information with the local community or let us know who else we may contact. More information: https://timconquynhnga.com/ Thank you for your time and any assistance.</div>
+        </article>
+        <article class="message-card">
           <div class="message-head"><h3>Tiếng Nga</h3><button type="button" class="copy-button" data-target="msg-ru">Sao chép</button></div>
-          <div class="message-box" id="msg-ru">Здравствуйте. Мы просим вашей помощи в распространении информации о Нгуен Куинь Нга, пропавшей в районе Сочи в 1993 году. Мы прилагаем её детскую фотографию и современное AI-изображение для возможного узнавания. Если возможно, пожалуйста, передайте эту информацию местному сообществу или подскажите, кому ещё можно написать. Подробности: https://timconquynhnga.com/ru/ Спасибо за внимание и любую помощь.</div>
+          <div class="message-box" id="msg-ru">Здравствуйте. Наша семья ищет Нгуен Куинь Нга уже более 30 лет, с тех пор как она пропала в районе Сочи в 1993 году. Недавно мы получили информацию, что она, возможно, живёт в этом регионе. Мы прилагаем её детскую фотографию и изображение, созданное с помощью ИИ, показывающее, как она может выглядеть сейчас. Если возможно, пожалуйста, передайте эту информацию местному сообществу или подскажите, кому ещё можно написать. Подробности: https://timconquynhnga.com/ru/ Спасибо за внимание и любую помощь.</div>
         </article>
         <article class="message-card">
           <div class="message-head"><h3>Tiếng Georgia</h3><button type="button" class="copy-button" data-target="msg-ka">Sao chép</button></div>
-          <div class="message-box" id="msg-ka">გამარჯობა. გთხოვთ დაგვეხმაროთ ნგუიენ კუინ ნგას შესახებ ინფორმაციის გავრცელებაში. ის 1993 წელს სოჭის რეგიონში დაიკარგა. ვურთავთ მის ბავშვობის ფოტოს და AI-ით შექმნილ ამჟამინდელ გამოსახულებას, რათა შესაძლებელი იყოს ამოცნობა. თუ შესაძლებელია, გთხოვთ ეს ინფორმაცია გაუზიაროთ ადგილობრივ საზოგადოებას ან მიგვითითოთ, ვისთან შეიძლება დაკავშირება. დეტალები: https://timconquynhnga.com/ მადლობა ყურადღებისთვის და ნებისმიერი დახმარებისთვის.</div>
+          <div class="message-box" id="msg-ka">გამარჯობა. ჩვენი ოჯახი ნგუიენ კუინ ნგას უკვე 30 წელზე მეტია ეძებს, მას შემდეგ, რაც ის 1993 წელს სოჭის რეგიონში დაიკარგა. ცოტა ხნის წინ მივიღეთ ინფორმაცია, რომ ის შესაძლოა ამ რეგიონში ცხოვრობდეს. ვურთავთ მის ბავშვობის ფოტოს და AI-ით შექმნილ გამოსახულებას, რომელიც აჩვენებს, როგორ შეიძლება გამოიყურებოდეს დღეს. თუ შესაძლებელია, გთხოვთ ეს ინფორმაცია გაუზიაროთ ადგილობრივ საზოგადოებას ან მიგვითითოთ, ვისთან შეიძლება დაკავშირება. დეტალები: https://timconquynhnga.com/ მადლობა ყურადღებისთვის და ნებისმიერი დახმარებისთვის.</div>
         </article>
         <article class="message-card">
           <div class="message-head"><h3>Tiếng Armenia</h3><button type="button" class="copy-button" data-target="msg-hy">Sao chép</button></div>
-          <div class="message-box" id="msg-hy">Բարեւ ձեզ։ Խնդրում ենք աջակցել Նգույեն Քուին Նգայի մասին տեղեկության տարածմանը։ Նա կորել է 1993 թվականին Սոչիի շրջանում։ Կցում ենք նրա մանկության լուսանկարը եւ արհեստական բանականությամբ ստեղծված ներկայիս պատկերը՝ հնարավոր ճանաչման համար։ Եթե հնարավոր է, խնդրում ենք այս տեղեկությունը փոխանցել ձեր համայնքին կամ մեզ հուշել, թե ուրիշ ում կարող ենք գրել։ Մանրամասները՝ https://timconquynhnga.com/ Շնորհակալություն ուշադրության եւ ցանկացած օգնության համար։</div>
+          <div class="message-box" id="msg-hy">Բարեւ ձեզ։ Մեր ընտանիքը ավելի քան 30 տարի փնտրում է Նգույեն Քուին Նգային՝ 1993 թվականին Սոչիի շրջանում նրա անհետանալուց հետո։ Վերջերս տեղեկություն ենք ստացել, որ նա հնարավոր է ապրում է այս տարածաշրջանում։ Կցում ենք նրա մանկության լուսանկարը եւ արհեստական բանականությամբ ստեղծված պատկերը, որը ցույց է տալիս, թե նա ինչպես կարող է այսօր տեսք ունենալ։ Եթե հնարավոր է, խնդրում ենք այս տեղեկությունը փոխանցել ձեր համայնքին կամ մեզ հուշել, թե ուրիշ ում կարող ենք գրել։ Մանրամասները՝ https://timconquynhnga.com/ Շնորհակալություն ուշադրության եւ ցանկացած օգնության համար։</div>
         </article>
         <article class="message-card">
           <div class="message-head"><h3>Tiếng Azerbaijan</h3><button type="button" class="copy-button" data-target="msg-az">Sao chép</button></div>
-          <div class="message-box" id="msg-az">Salam. 1993-cü ildə Soçi bölgəsində itkin düşmüş Nquyen Kuin Nqa haqqında məlumatın yayılmasına kömək etməyinizi xahiş edirik. Tanınmağa kömək üçün onun 12 yaşındakı fotosunu və hazırkı AI təsvirini əlavə edirik. Mümkündürsə, bu məlumatı yerli icma ilə paylaşın və ya bizə başqa kimlə əlaqə saxlaya biləcəyimizi bildirin. Ətraflı məlumat: https://timconquynhnga.com/ Diqqətinizə və hər cür köməyə görə təşəkkür edirik.</div>
+          <div class="message-box" id="msg-az">Salam. Ailəmiz Nquyen Kuin Nqanı 1993-cü ildə Soçi bölgəsində itkin düşdüyü vaxtdan bəri, 30 ildən çoxdur axtarır. Bu yaxınlarda onun bu bölgədə yaşaya biləcəyinə dair məlumat almışıq. Tanınmağa kömək üçün onun uşaqlıq fotosunu və bu gün necə görünə biləcəyini göstərən süni intellektlə yaradılmış təsviri əlavə edirik. Mümkündürsə, bu məlumatı yerli icma ilə paylaşın və ya bizə başqa kimlə əlaqə saxlaya biləcəyimizi bildirin. Ətraflı məlumat: https://timconquynhnga.com/ Diqqətinizə və hər cür köməyə görə təşəkkür edirik.</div>
         </article>
       </div>
       <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>

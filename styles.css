@@ -153,3 +153,15 @@ h2 { font-size: 27px; margin-bottom: 12px; }
 @media (max-width: 760px) {
   .volunteer-signup { grid-template-columns: 1fr; gap: 18px; }
 }
+
+
+.signup-form { min-width: min(100%, 360px); }
+.signup-form label { display:block; margin-bottom:7px; font-size:14px; font-weight:650; }
+.signup-row { display:flex; gap:8px; }
+.signup-row input[type="email"] { min-width:0; flex:1; border:1px solid var(--line); border-radius:3px; padding:10px 12px; font:inherit; background:#fff; }
+.signup-row input[type="email"]:focus { outline:2px solid rgba(81,105,91,.24); border-color:var(--accent); }
+.signup-row button:disabled { opacity:.65; cursor:wait; }
+.form-note, .form-status { margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.45; }
+.form-status { color:var(--accent-dark); min-height:1.45em; }
+.hp-field { position:absolute !important; left:-9999px !important; width:1px; height:1px; opacity:0; }
+@media (max-width:520px) { .signup-row { flex-direction:column; } .signup-row button { width:100%; } }

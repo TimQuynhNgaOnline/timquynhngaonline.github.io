@@ -92,13 +92,10 @@
         <p>Chân thành cảm ơn sự quan tâm của các bạn. Cho dù bạn chỉ dành ra 10 phút và chỉ gửi một tin nhắn, đó vẫn là một niềm động viên rất lớn đối với gia đình.</p>
       </div>
       <form class="signup-form" id="volunteerForm" novalidate>
-        <label for="volunteerEmail">Email của bạn</label>
         <div class="signup-row">
-          <input id="volunteerEmail" name="email" type="email" autocomplete="email" placeholder="ten@example.com" required>
+          <input id="volunteerEmail" name="email" type="email" autocomplete="email" inputmode="email" aria-label="Email đăng ký tình nguyện viên" placeholder="Email của bạn" required>
           <button type="submit">Đăng ký</button>
         </div>
-        <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <p class="form-note">Email chỉ được dùng để ban quản trị liên hệ và mời bạn vào bảng công việc.</p>
         <p class="form-status" id="volunteerStatus" role="status" aria-live="polite"></p>
       </form>
     </section>

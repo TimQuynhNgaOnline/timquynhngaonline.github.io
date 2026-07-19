@@ -23,7 +23,7 @@ document.querySelectorAll('.copy-button').forEach((button) => {
 
 
 // Dán URL Web App của Google Apps Script vào đây sau khi triển khai.
-const VOLUNTEER_FORM_ENDPOINT = 'PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const VOLUNTEER_FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxZStN3ZJ4jhAsCeSariV1FEcTcsiM5JhfV2rZ_WW-9PKsOPZjNCVsCg6kLiqmAgjrj/exec';
 const volunteerForm = document.getElementById('volunteerForm');
 const volunteerStatus = document.getElementById('volunteerStatus');
 
@@ -32,9 +32,6 @@ if (volunteerForm) {
     event.preventDefault();
     const emailInput = document.getElementById('volunteerEmail');
     const submitButton = volunteerForm.querySelector('button[type="submit"]');
-    const honeypot = volunteerForm.querySelector('input[name="website"]');
-
-    if (honeypot && honeypot.value) return;
     if (!emailInput || !emailInput.checkValidity()) {
       if (volunteerStatus) volunteerStatus.textContent = 'Vui lòng nhập một địa chỉ email hợp lệ.';
       emailInput?.focus();
